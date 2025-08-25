@@ -1,0 +1,192 @@
+@use 'variables';
+@use 'mixins';
+@use 'animations';
+@use 'sass:color';
+
+.register-container {
+  @include mixins.glassy;
+  padding: 2rem;
+  border-radius: variables.$radius;
+  box-shadow: variables.$shadow;
+  width: 340px;
+  animation: floatUp 8s ease-in-out infinite;
+}
+
+.register-form {
+  padding: 0 1rem; // Añade espacio horizontal uniforme
+
+  input {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    box-sizing: border-box; // Asegura que el padding no rompa el ancho
+  }
+  h2 {
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: #333;
+  }
+
+  input {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+  }
+
+  button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: variables.$color-turquoise;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      //background-color: darken(variables.$color-turquoise, 10%);
+      background-color: color.adjust(variables.$color-turquoise, $lightness: -10%);
+      //background-color: color.scale(variables.$color-turquoise, $lightness: -17.7%);
+
+    }
+
+  }
+
+  .login-link {
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+
+    a {
+      color: variables.$color-turquoise;
+      text-decoration: none;
+    }
+  }
+}
+
+.register-page {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0e0e0e;
+  filter: contrast(120%) saturate(130%);
+  animation: waveFlow 60s linear infinite,
+  floatUp 12s ease infinite;
+}
+
+.wave {
+  position: absolute;
+  width: 200%;
+  height: 200px;
+  top: 0;
+  left: -50%;
+  //background: linear-gradient(90deg, #ff4d6d, #40E0D0, #a140a4, #ff4d6d);
+  background: linear-gradient(135deg,
+          #192e86,
+          #4f6edc, // transición entre azul oscuro y azul claro
+          #7990fc,
+          #77cadc,
+          #5ac4a9,
+          #7fae9f, // transición entre verde agua y gris
+          #9da6a1,
+          #c88ab0, // transición entre gris y rosa
+          #e076bb,
+          #ef4481,
+          #c24a8a, // transición entre fucsia y púrpura
+          #a93381
+  );
+  border-radius: 50%;
+  transform: rotate(0deg) skewY(-10deg);
+  animation: waveMotion 10s linear infinite;
+  opacity: 0.6;
+  filter: blur(30px);
+}
+/*
+  background: linear-gradient(135deg,
+          #192e86,
+          #4f6edc, // transición entre azul oscuro y azul claro
+          #7990fc,
+          #77cadc,
+          #5ac4a9,
+          #7fae9f, // transición entre verde agua y gris
+          #9da6a1,
+          #c88ab0, // transición entre gris y rosa
+          #e076bb,
+          #ef4481,
+          #c24a8a, // transición entre fucsia y púrpura
+          #a93381
+  );
+ */
+
+@keyframes waveMotion {
+  0% { transform: translateX(0) skewY(-10deg); }
+  100% { transform: translateX(50%) skewY(-10deg); }
+}
+
+@keyframes waveFlow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+  100% { transform: translateY(0); }
+}
+
+
+body.register-active {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  /*
+  background: linear-gradient(135deg,
+          #a93381,
+          #4dad77,
+          #7990fc,
+          #5ac4a9
+  );
+   */
+  background: linear-gradient(135deg,
+          #192e86,
+          #4f6edc, // transición entre azul oscuro y azul claro
+          #7990fc,
+          #77cadc,
+          #5ac4a9,
+          #7fae9f, // transición entre verde agua y gris
+          #9da6a1,
+          #c88ab0, // transición entre gris y rosa
+          #e076bb,
+          #ef4481,
+          #c24a8a, // transición entre fucsia y púrpura
+          #a93381
+  );
+  background-size: 400% 400%;
+  animation: petruVibes 48s ease infinite;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes petruVibes {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+

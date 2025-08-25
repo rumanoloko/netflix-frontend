@@ -1,0 +1,74 @@
+.mi-lista-component {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    white-space: nowrap;
+    cursor: pointer;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    gap: 5px;
+}
+
+.mi-lista-component::-webkit-scrollbar {
+    display:none;
+}
+
+
+
+.h3_ {
+    font-family: sans-serif;
+    font-weight: 300;
+    margin: 10px 0;
+}
+.lista-series {
+    height: 390px;
+    width: 100%;
+}
+
+
+.detalle-serie {
+    margin: 5px 0;
+    font-family: sans-serif;
+    height: 300px;
+}
+.detalle-serie p {
+    max-width: 55vw;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    margin: 5px;
+}
+
+.info-serie {
+    display: flex;
+
+    justify-content: flex-start; /* Puedes usar 'space-between', 'flex-start', etc. */
+    align-items: center; /* Alineación vertical */
+    max-width: 60vw;
+    flex-wrap: wrap; /* Por si no caben, que salten de línea */
+    font-size: 0.9rem;
+    padding: 0
+}
+
+.espacio-final {
+    min-width: 47vw;
+}
+
+.descripcion-serie {
+    font-size: 1.1rem;
+}
+
+.info-serie p {
+    position: relative;
+    padding-right: 1rem;
+}
+
+.info-serie p:not(:last-child)::after {
+    content: "•";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: gray;
+    font-size: 1.2rem;
+}
+

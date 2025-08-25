@@ -1,0 +1,61 @@
+.userDropDown {
+    position: relative;
+    display: flex;
+    font-family: sans-serif;
+    width: 200px;
+    gap: 3px;
+    margin-left: -10px;
+}
+
+.parteVisible {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    gap: 10px;
+    margin: 10px 10px;
+}
+
+.subparteVisible {
+    display: none;
+}
+.subparteVisible h4 {
+    margin: 0;
+    font-size: 0.9rem;
+}
+.subparteVisible span {
+    font-family: sans-serif;
+    font-size: 0.8rem;
+}
+
+.avatarImage {
+    height: 30px;
+    width: auto;
+    /*border-radius: 50%;
+    margin-right: 8px;
+     */
+}
+
+.parteDesplegable {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: #272a3a;
+    flex-direction: column;
+    z-index: 100;
+    display: none;
+    pointer-events: auto;
+}
+
+.userDropDown:hover .parteDesplegable,
+.userDropDown:hover .subparteVisible {
+    display: block;
+}
+
+.userDropDown:hover + .parteDesplegable {
+    pointer-events: auto; /* ← se activa cuando aparece */
+}
+
+.userDropDown:hover{
+    background-color: lightgray;
+    color: #000000;
+}

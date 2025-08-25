@@ -1,0 +1,14 @@
+.tecla-boton {
+  height: 30px;
+  width: 30px;
+  margin: 2px;
+  border-radius: 0;
+  border: none;
+  color: white;
+  background-color: #393d3d;
+}
+
+.tecla-boton:hover {
+  cursor: pointer;
+  border: #ffffff 2px solid;
+}

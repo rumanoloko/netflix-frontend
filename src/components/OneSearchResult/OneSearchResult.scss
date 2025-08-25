@@ -1,0 +1,23 @@
+.resultShow {
+  height: 365px;
+  width: 270px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.resultShow:hover{
+  cursor: pointer;
+  border: #ffffff solid 1.5px;
+  box-sizing: border-box;
+}
+
+.result-image {
+  height: 100%;
+  width: auto;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}

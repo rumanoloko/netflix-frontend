@@ -1,0 +1,39 @@
+.edgeProfile {
+    height: 50px;
+    width: auto;
+}
+.edgeProfileOption {
+    display: flex;
+    position: relative;
+    font-family: sans-serif;
+    flex-direction: row; /* Alinea los hijos en columna (vertical) */
+    justify-content: left; /* Centra verticalmente */
+    align-items: center;
+    width: 200px;
+    height: 40px;
+    gap: 3px;
+
+}
+.edgeProfileOption{
+    color: lightgray;
+    font-family: sans-serif;
+    font-size: 0.9rem;
+}
+
+.edgeProfileOption:hover{
+    background-color: lightgray;
+    color: black;
+    cursor: pointer;
+}
+
+
+.edgeProfileOption svg {
+    height: 25px;
+    width: auto;
+    margin: 0 12px
+}
+
+.edgeProfileSpan{
+    font-family: sans-serif;
+    font-size: 8px;
+}

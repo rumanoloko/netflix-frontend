@@ -1,0 +1,67 @@
+body{
+  background-color: #000000;
+  color: lightgray;
+}
+.divSuperior {
+  height: 40px;
+  padding: 0 0 5px 0;
+  display: flex;
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #000;
+  padding: 0 0 0 245px;
+  color: lightgray;
+  font-family: sans-serif;
+  flex: 1;
+}
+
+.navbar ul {
+  display: flex;
+  gap: 10px;
+  list-style: none;
+}
+
+.navbar ul > li {
+  cursor: pointer;
+  padding: 0.45rem 1rem;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  color: lightgray;
+}
+
+.navbar ul > li:hover {
+  background-color: lightgray;
+  color: black;
+}
+
+.navbar ul > li:hover .lupaSVG path {
+  fill: black;
+}
+
+.logoImage {
+  height: 30px;
+  width: auto;
+  object-fit: contain;
+}
+
+.avatarImage {
+  height: 30px;
+  width: auto;
+  object-fit: contain;
+}
+.logo-li {
+  padding: 1rem 1rem;
+  border-radius: 50%;
+}
+.lupaSVG {
+  width: 20px;
+  height: 20px;
+}
+
+

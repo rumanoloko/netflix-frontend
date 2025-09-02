@@ -1,0 +1,89 @@
+
+.div-login {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  background-image: url('https://assets.nflxext.com/ffe/siteui/vlv3/cb72daa5-bd8d-408b-b949-1eaef000c377/web/ES-es-20250825-TRIFECTA-perspective_112c71e7-1298-4090-b862-55ff09b1ac4e_small.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.div-login::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(34, 34, 42, 0.4);
+  z-index: 0;
+}
+
+.div-info {
+
+  position: relative;
+  box-sizing: border-box;
+  transform: translate(-10px, -70px);
+  z-index: 1;
+  background-color: rgba(0, 0, 0,0.7);
+  height: 710px;
+  width: 480px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 5px;
+  padding: 40px 50px;
+  gap: 20px;
+}
+.div-info h1 {
+  text-align: left;
+  font-family: sans-serif;
+  width: 340px;
+}
+.div-info-input {
+  height: 50px;
+  width: 340px;
+  margin: 0;
+  border-radius: 5px;
+  border: 1px solid #c5c3c3;
+  background: rgba(0, 0, 0, 0.6);
+  color: #ffffff;
+  font-size: 16px;
+  padding-left: 15px;
+  box-sizing: border-box;
+  font-weight: 400;
+}
+.div-info p{
+  font-family: sans-serif;
+}
+
+.div-info-button {
+  height: 40px;
+  width: 340px;
+  margin: 0;
+  border: none;
+  border-radius: 5px;
+  color: #ffffff;
+  background: #dc0c31;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.div-logo {
+  transform: translate(0, -40px);
+  padding: 0;
+  margin-left: 300px;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.svg-netflix-logo {
+  height: 150px;
+  width: auto;
+  fill: #dc0c31;
+}

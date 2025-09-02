@@ -31,8 +31,6 @@ export default function MiSerie({ serie, isSelected, onSelect }) {
         return () => clearTimeout(timeoutRef.current);
     }, [isSelected]);
     const embedUrl = `https://www.youtube.com/embed/${serie.videoID}?autoplay=1&mute=1`
-    console.log(serie.title);
-    console.log(embedUrl);
     return (
         <div
             ref={itemRef}

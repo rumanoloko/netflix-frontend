@@ -2,7 +2,7 @@ import './SearchPage.scss'
 import {BotonComponent, CategoriaComponent} from '../../components/PulsableComponente/PulsableComponent.jsx'
 import {v4 as uuidv4} from "uuid";
 import OneSearchResult from "../../components/OneSearchResult/OneSearchResult.jsx";
-import {useState} from "react";
+import {useState, useEffect} from "react";
 export default function SearchPage({series}) {
     const caracteres = [
         'a','b','c','d','e','f','g','h','i','j','k','l','m',
@@ -34,9 +34,31 @@ export default function SearchPage({series}) {
         "WWE"
     ];
     const [inputValue,setInputValue] = useState('');
+    const [seriesLista, setSeries] = useState(series);
     const agregarCaracter = ({letra}) => {
         setInputValue((prev) => prev + letra);
     }
+
+    useEffect(
+        () => {
+            fetch(`http://localhost:5000/api/series?query=${encodeURIComponent(inputValue)}`)
+                .then(
+                    response => {
+                        if (!response.ok) throw new Error("Error en la solicitud");
+                        return response.json();
+                    }
+                )
+                .then(data => setSeries(data))
+                .catch(
+                    error => {
+                        console.error('Error al buscar las series:', error);
+                        setSeries([]);
+                    }
+                );
+        }
+        , [inputValue]
+    );
+
     return (
         <div className="search-div">
             <div className="buscador-div">
@@ -79,8 +101,8 @@ export default function SearchPage({series}) {
                 }
                 <div className="results-list-div">
                     {
-                        Array.isArray(series) && series.length > 0 ?
-                            series.map((serie, index) => (<OneSearchResult key={serie.title} serie={serie}/>))
+                        Array.isArray(seriesLista) && seriesLista.length > 0 ?
+                            seriesLista.map((serie, index) => (<OneSearchResult key={serie.title} serie={serie}/>))
                             : (<p>No se pudieron cargar los datos necesarios</p>)
                     }
                 </div>

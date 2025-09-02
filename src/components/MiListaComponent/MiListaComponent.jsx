@@ -1,8 +1,8 @@
 import './MiListaComponent.css';
-import MiSerie from '../Miserie/MiSerie';
+import MiSerie from '../MiSerie/MiSerie.jsx';
 import { v4 as uuidv4 } from "uuid";
 import React, { useRef, useState, useEffect } from 'react';
-import HugeView from "../HugeView/HugeView.jsx";
+import HugeView from '../HugeView/HugeView.jsx';
 
 export function MiListaComponent({series}) {
     const scrollSpeed = 120; // velocidad de desplazamiento
